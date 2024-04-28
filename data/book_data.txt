@@ -7,4 +7,4 @@ Introduction to Algorithms,Thomas H. Cormen,Available,9780262033848,1292,2009
 Effective Java,Joshua Bloch,Available,9780134685991,416,2017
 Code Complete,Steve McConnell,Checked Out,9780735619678,960,2004
 You Don't Know JS,Kyle Simpson,Available,9781491924464,278,2015
-The Mythical Man-Month,Frederick P. Brooks Jr.,Available,9780201835953,336,1995
+The Mythical Man-Month,Frederick Peter,Available,9780201835953,336,1995

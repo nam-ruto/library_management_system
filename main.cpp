@@ -6,16 +6,20 @@
 #include "media.h"
 using namespace std;
 
-//Prototype
+//Prototype: Input data from text file
 void inputBookData(Book *bookStorage);
 void inputMagazineData(Magazine *magazineStorage);
 void inputNewspaperData(Newspaper *newspaperStorage);
 
+//TASK 1: Display databases
 void displayBooks(Book *bookStorage, int);
 void displayMagazine(Magazine *magazineStorage, int);
 void displayNewspaper(Newspaper *newspaperStorage, int);
 
-void layout(int n); //Layout: Display line around
+//TASK 2: SEARCH MATERIALS
+void search();
+
+void layout(int n); //Layout: Display the lines around
 
 fstream myFile; //Initialize fstream: Reading data from text file
 
@@ -28,7 +32,7 @@ int main()
 
     inputBookData(bookStorage);
     inputMagazineData(magazineStorage);
-    // inputNewspaperData(newspaperStorage);
+    inputNewspaperData(newspaperStorage);
 
     string option;
     
@@ -49,11 +53,13 @@ int main()
         {
             displayBooks(bookStorage, numBooks);
             displayMagazine(magazineStorage, numMaga);
-            
+            displayNewspaper(newspaperStorage, numNews);
         }
 
         else if(option == "2")
-        {cout << "Search";}
+        {
+            
+        }
 
         else if(option == "6")
         {
@@ -67,6 +73,7 @@ int main()
     return 0;
 }
 
+//READ DATA FROM TEXT FILE
 void inputBookData(Book *bookStorage)
 {
     myFile.open("data/book_data.txt", ios::in);
@@ -136,54 +143,112 @@ void inputMagazineData(Magazine *magazineStorage)
     myFile.close();
 }
 
+void inputNewspaperData(Newspaper *newspaperStorage)
+{
+    myFile.open("data/newspaper_data.txt", ios::in);
+    if(myFile.fail())
+    {
+        cout << "Cannot open the file. Please try again\n";
+    }
+    else
+    {
+        string title, author, available, publicFrequency, local, line, topic;
+        int index = 0;
+
+        while(getline(myFile, line))
+        {
+            stringstream ss(line);
+            getline(ss, title, ',');
+            getline(ss, author, ',');
+            getline(ss, available, ',');
+            getline(ss, publicFrequency, ',');
+            getline(ss, local, ',');
+            getline(ss, topic, ',');
+        
+            Newspaper tmp(title, author, available, publicFrequency, local, topic);
+            newspaperStorage[index] = tmp;
+
+            index ++;
+        }
+    }
+
+    myFile.close();
+}
+
+//DISPLAY DATABASES
 void displayBooks(Book *bookStorage, int numBooks)
 {
     //DISPLAY BOOK DATABASES
-    layout(120);
-    cout << left << setw(60) << "|" << "BOOK" << right << setw(58) << "|" << endl;
-    layout(120);
-    cout << left << setw(30) << "| TITLE" << "   | " << setw(25)
+    layout(112);
+    cout << left << setw(55) << "|" << "BOOK" << right << setw(55) << "|" << endl;
+    layout(112);
+    cout << left << setw(30) << "| TITLE" << "   | " << setw(18)
         << "AUTHOR" << " | " << setw(15)
         << "AVAILABLE" << " | " << setw(15)
         << "ISBN" << " | " << setw(10)
-        << "PAGES" << " | " << setw(9)
+        << "PAGES" << " | " << setw(8)
         << "YEAR" << "|"<< endl;
-    layout(120);
+    layout(112);
     for(int i = 0; i < numBooks; i++)
     {
-        cout << "| " << left << setw(30) << bookStorage[i].getTitle() << " | " << setw(25)
+        cout << "| " << left << setw(30) << bookStorage[i].getTitle() << " | " << setw(18)
         << bookStorage[i].getAuthor() << " | " << setw(15)
         << bookStorage[i].getAvailable() << " | " << setw(15)
         << bookStorage[i].getISBN() << " | " << setw(10)
-        << bookStorage[i].getPageCount() << " | " << setw(9)
+        << bookStorage[i].getPageCount() << " | " << setw(8)
         << bookStorage[i].getPublicationYear() << "|" << endl;
     }
-    layout(120);
+    layout(112);
 }
 
 void displayMagazine(Magazine *magazineStorage, int numMaga)
 {
     // DISPLAY Magazine DATABASES
-    layout(125);
-    cout << left << setw(60) << "|" << "MAGAZINE" << right << setw(59) << "|" << endl;
-    layout(125);
-    cout << left << setw(30) << "| TITLE" << "   | " << setw(25)
+    layout(120);
+    cout << left << setw(57) << "|" << "MAGAZINE" << right << setw(57) << "|" << endl;
+    layout(120);
+    cout << left << setw(30) << "| TITLE" << "   | " << setw(18)
         << "AUTHOR" << " | " << setw(15)
         << "AVAILABLE" << " | " << setw(15)
         << "SUBSCRIPTION" << " | " << setw(10)
-        << "FREQUENCY" << " | " << setw(14)
+        << "FREQUENCY" << " | " << setw(16)
         << "CONTENT" << "|"<< endl;
-    layout(125);
+    layout(120);
     for(int i = 0; i < numMaga; i++)
     {
-        cout << "| " << left << setw(30) << magazineStorage[i].getTitle() << " | " << setw(25)
+        cout << "| " << left << setw(30) << magazineStorage[i].getTitle() << " | " << setw(18)
         << magazineStorage[i].getAuthor() << " | " << setw(15)
         << magazineStorage[i].getAvailable() << " | " << setw(15)
         << magazineStorage[i].getSubscriptionDuration() << " | " << setw(10)
-        << magazineStorage[i].getFrequencyOfPublication() << " | " << setw(14)
+        << magazineStorage[i].getFrequencyOfPublication() << " | " << setw(16)
         << magazineStorage[i].getContent() << "|" << endl;
     }
-    layout(125);
+    layout(120);
+}
+
+void displayNewspaper(Newspaper *newspaperStorage, int numNews)
+{
+    // DISPLAY Newspaper DATABASES
+    layout(123);
+    cout << left << setw(59) << "|" << "Newspaper" << right << setw(57) << "|" << endl;
+    layout(123);
+    cout << left << setw(30) << "| TITLE" << "   | " << setw(18)
+        << "AUTHOR" << " | " << setw(15)
+        << "AVAILABLE" << " | " << setw(15)
+        << "FREQUENCY" << " | " << setw(15)
+        << "LOCAL" << " | " << setw(14)
+        << "TOPIC" << "|"<< endl;
+    layout(123);
+    for(int i = 0; i < numNews; i++)
+    {
+        cout << "| " << left << setw(30) << newspaperStorage[i].getTitle() << " | " << setw(18)
+        << newspaperStorage[i].getAuthor() << " | " << setw(15)
+        << newspaperStorage[i].getAvailable() << " | " << setw(15)
+        << newspaperStorage[i].getPublicationFrequency() << " | " << setw(15)
+        << newspaperStorage[i].isLocal() << " | " << setw(14)
+        << newspaperStorage[i].getTopic() << "|" << endl;
+    }
+    layout(123);
 }
 
 void layout(int n)

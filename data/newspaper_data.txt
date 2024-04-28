@@ -1,0 +1,10 @@
+The Daily Chronicle,Robert Johnson,Available,Weekly,Local,Sports
+Morning Times,John Doe,Unavailable,Daily,International,Education
+Evening Gazette,Jane Smith,Available,Monthly,Local,Health
+Weekly Observer,Alice Williams,Available,Bi-weekly,Local,Education
+The Globe,Michael Brown,Unavailable,Daily,International,Education
+City Herald,David Miller,Available,Weekly,Local,Environment
+World Journal,Sarah White,Unavailable,Monthly,International,Education
+The Tribune,Christopher Green,Available,Bi-weekly,Local,Politic
+Global Times,Emily Adams,Unavailable,Daily,International,Politic
+Metro News,Laura King,Available,Weekly,Local,Politic

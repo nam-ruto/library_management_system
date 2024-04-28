@@ -128,6 +128,16 @@ string Newspaper::getPublicationFrequency()
     return publicFrequency;
 }
 
+string Newspaper::getTopic()
+{
+    return topic;
+}
+
+string Newspaper::getAvailable()
+{
+    return available;
+}
+
 string Newspaper::isLocal()
 {
     return local;

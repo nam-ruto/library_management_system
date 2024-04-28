@@ -112,12 +112,13 @@ class Newspaper : public Media
 	private:
 		string publicFrequency;
 		string local;
+		string topic;
 	public:
 		//Default constructor
 		Newspaper() : publicFrequency("Daily"), local("Local"){}
 		//Constructor
-		Newspaper(string title, string author, string available, string freq, string local)
-			: publicFrequency(freq), local(local)
+		Newspaper(string title, string author, string available, string freq, string local, string topic)
+			: publicFrequency(freq), local(local), topic(topic)
 			{
 				setTitle(title);
 				setAuthor(author);
@@ -127,8 +128,13 @@ class Newspaper : public Media
 		//Returns the frequency of publication for a newspaper (e.g., daily, weekly, monthly)
 		string getPublicationFrequency();
 
+		//Return topic of the newspaper
+		string getTopic();
+
 		//Determines whether a newspaper is focused on local news
 		string isLocal();
+
+		string getAvailable();
 
 		//Allows an article to be published in a specific section or topic of a newspaper
 		void publishArticle();
