@@ -1,0 +1,10 @@
+Tech Innovate,Jane Smith,In Stock,Monthly,Monthly,Technology
+Health & Wellness,Alice Brown,Out of Stock,Yearly,Quarterly,Health
+Travel Explorer,John Green,In Stock,Monthly,Monthly,Travel
+Culinary Delights,Maria Garcia,In Stock,Monthly,Monthly,Food
+Artistic Expressions,Paul Anderson,In Stock,Yearly,Bimonthly,Culture
+Fitness Focus,Emma Wilson,Out of Stock,Monthly,Weekly,Fitness
+Business Insights,Robert Taylor,In Stock,Yearly,Monthly,Business
+Eco World,Laura White,In Stock,Yearly,Quarterly,Environment
+Sports Spotlight,Mike Johnson,In Stock,Monthly,Weekly,Sports
+History Chronicles,Samantha Lee,Out of Stock,Yearly,Bimonthly,History
