@@ -40,9 +40,15 @@ bool Media::returnItem()
 bool Media::checkOut()
 {
     if(available == "Available")
+    {
+        
         return true;
+    }
     else
+    {
+        
         return false;
+    }
 }
 
 void Media::information()
