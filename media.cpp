@@ -31,22 +31,32 @@ string Media::getAuthor()
 
 bool Media::returnItem()
 {
-    if(available == "Available")
+    if(available == "Checked Out" || available == "Unavailable" || available == "Out of Stock")
+    {
+        cout << "Return Item SUCCESSFULLY" << endl;
+        cout << "Hope to see you again!" << endl;
         return true;
+    }        
     else
+    {
+        cout << "Opps! Something wrong. The item is already in the storage" << endl;
+        cout << "Please try again" << endl;
         return false;
+    }
 }
 
 bool Media::checkOut()
 {
-    if(available == "Available")
+    if(available == "Available" || available == "In Stock")
     {
-        
+        cout << "Item currently is AVAILABLE" << endl;
+        cout << "You've checked out SUCCESSFULLY!" << endl;
         return true;
     }
     else
     {
-        
+        cout << "Sorry, item is UNAVAILABLE" << endl;
+        cout << "See you next time!" << endl;
         return false;
     }
 }

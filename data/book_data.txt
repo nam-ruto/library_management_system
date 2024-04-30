@@ -1,8 +1,8 @@
-Starting Out With C++,Tony Gadiss,Available,12345679,900,2023
+Starting Out With C++,Tony Gaddis,Available,3670132350124,1895,2023
 Clean Code,Robert C. Martin,Available,9780132350884,464,2008
 The Pragmatic Programmer,Andrew Hunt,Available,9780201616224,352,1999
 Design Patterns,Erich Gamma,Available,9780201633610,395,1994
-Refactoring,Martin Fowler,Checked Out,9780201485673,431,1999
+Starting Out With C++,Tony Gaddis,Checked Out,9780201485673,1094,2019
 Introduction to Algorithms,Thomas H. Cormen,Available,9780262033848,1292,2009
 Effective Java,Joshua Bloch,Available,9780134685991,416,2017
 Code Complete,Steve McConnell,Checked Out,9780735619678,960,2004
